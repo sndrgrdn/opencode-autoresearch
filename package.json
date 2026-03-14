@@ -24,7 +24,8 @@
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist/",
     "smoke": "bun run build && bun run smoke.ts",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "bun run build",
+    "release": "npm version ${VERSION:-patch} && git push && git push --tags"
   },
   "dependencies": {
     "zod": "^4.3.6"
