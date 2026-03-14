@@ -5,12 +5,15 @@
     "": {
       "name": "opencode-autoresearch",
       "dependencies": {
-        "@opencode-ai/plugin": "^1.2.26",
         "zod": "^4.3.6",
       },
       "devDependencies": {
+        "@opencode-ai/plugin": "^1.2.26",
         "@types/bun": "latest",
         "typescript": "^5.9.3",
+      },
+      "peerDependencies": {
+        "@opencode-ai/plugin": ">=1.0.0",
       },
     },
   },

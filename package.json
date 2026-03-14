@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "description": "Autonomous experiment loop plugin for OpenCode - optimize code through iterative experimentation",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
   "files": ["dist/", "skills/", "README.md"],
@@ -15,13 +19,17 @@
     "dev": "tsc --watch",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist/",
-    "smoke": "bun run build && bun run smoke.ts"
+    "smoke": "bun run build && bun run smoke.ts",
+    "prepublishOnly": "bun run build"
   },
   "dependencies": {
-    "@opencode-ai/plugin": "^1.2.26",
     "zod": "^4.3.6"
   },
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.0.0"
+  },
   "devDependencies": {
+    "@opencode-ai/plugin": "^1.2.26",
     "@types/bun": "latest",
     "typescript": "^5.9.3"
   },
